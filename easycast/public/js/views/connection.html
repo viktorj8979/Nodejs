@@ -1,0 +1,83 @@
+<div class="page-header">
+	<h1>{{title}}</h1>
+</div>
+<div>
+	<button id="new-layout" class="btn btn-success" ng-click = "showManageModal(-1)">
+		<span>+ Connection</span>
+	</button>
+</div>
+
+<div>
+	<table ng-table="tableParams" class="table bi-table">
+		<tr ng-repeat="con in connections">
+			<td data-title="'Title'" sortable="title">
+				{{con.title}}
+			</td>
+			<td data-title="'Type'" sortable="type">
+				{{con.type}}
+			</td>
+			<td data-title="'DSN'">
+				{{con.dsn}}
+			</td>
+			<td data-title="'User Name'">
+				{{con.username}}
+			</td>
+			<td data-title="'Action'">
+				<button type="button" class="btn btn-default" ng-click = "showManageModal($index)">
+					Manage
+				</button>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+<div id="manageModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			×
+		</button>
+		<h3 id="myModalLabel">Management Connection</h3>
+	</div>
+
+	<div class="modal-body">
+		<div class="cnt_b">
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Title: </label><input type="text" ng-model="curConnection.title"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Type: </label><input type="text" ng-model="curConnection.type"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>DSN: </label><input type="text" ng-model="curConnection.dsn"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Username: </label><input type="text" ng-model="curConnection.username"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Password: <input type="password" ng-model="curConnection.password"/>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-inverse" type = "submit" ng-click="saveConnection()">
+			Save Connection
+		</button>
+		<button class="btn btn-inverse" type = "submit" ng-show = "!newConnection" ng-click = "deleteConnection()">
+			Delete Connection
+		</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">
+			Close
+		</button>
+	</div>
+</div>

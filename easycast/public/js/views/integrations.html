@@ -1,0 +1,48 @@
+<div class="row integ-content">
+	<p class="span-16 span-bold">
+		Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor 
+		volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in 
+		ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, at tellus.
+	</p>
+	<p class="span-16 span-gray">
+		Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+		Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcuerat, accumsan id imperdiet et, porttitor at sem. Curabitur aliquet quam id dui posuere 
+		blandit. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta.
+	</p>
+</div>
+<div class="row integ-tabs">
+	<ul class="nav nav-tabs">
+    <li class="active"><a href="#" class="span-17">All Services</a></li>
+    <li><a href="#" class="span-17">Configured Integrations</a></li>
+    <li><a href="#" class="span-17">Authentications</a></li>
+	</ul>
+</div>
+<div class="row sm-nav-tabs">
+	<ul class="nav nav-tabs">
+    <li class="dropdown active">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">All Services <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">Configured Integrations</a></li>
+            <li><a href="#">Authentications</a></li>
+        </ul>
+    </li>
+</ul>
+</div>
+<div class="row integ-tab-body">
+	<div class="row integ-tab-search">
+		<a ng-click()><img src="img/integration/search_icon.png" alt="Search Icon" /></a>
+		<input type="text" name="filter-search" id="filter-search" placeholder="Filter by name">
+	</div>
+	<div class="row integ-tab-datas">
+		<div class="row integ-tab-content" ng-repeat="data in datas">
+			<div class="integ-tab-content-logo"><img src="img/{{data.logo}}" /></div>
+			<div class="integ-tab-content-body">
+				<p class="span-17 span-bold">{{data.title}}</p>
+				<p class="span-14">{{data.content}}</p>
+			</div>
+			<div>
+				<button>+ ADD</button>
+			</div>
+		</div>
+	</div>
+</div>

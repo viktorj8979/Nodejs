@@ -1,0 +1,119 @@
+<div class="page-header">
+	<h1>{{title}}</h1>
+</div>
+<div>
+	<button id="new-graph" class="btn btn-success" ng-click = "showManageModal(-1)">
+		<span>+ Graph</span>
+	</button>
+</div>
+
+<div>
+	<table ng-table="tableParams" class="table bi-table">
+		<tr ng-repeat="graph in graphs track by $index">
+			<td data-title="'Title'" sortable="title">
+				{{graph.title}}
+			</td>
+			<td data-title="'Description'">
+				{{graph.description}}
+			</td>
+			<td data-title="'Connection'">
+				<select ng-model='graph.connection' ng-options="con._id as con.title for con in connections"></select>
+			</td>
+			<td data-title="'Type'" sortable="type">
+				{{graph.type}}
+			</td>
+			<td data-title="'Query'" sortable="query">
+				{{graph.query}}
+			</td>
+			<td data-title="'Filter Predefined'">
+				{{graph.filter_predefined}}
+			</td>
+			<td data-title="'filter_ui'">
+				{{graph.filter_ui}}
+			</td>
+			<td data-title="'Post Process'">
+				{{graph.post_process}}
+			</td>
+			<td data-title="'config'" sortable="config">
+				{{graph.config}}
+			</td>
+			<td data-title="'Action'">
+				<button type="button" class="btn btn-default" ng-click = "showManageModal($index)">
+					Manage
+				</button>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+<div id="manageModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			×
+		</button>
+		<h3 id="myModalLabel">Management Graph</h3>
+	</div>
+
+	<div class="modal-body">
+		<div class="cnt_b">
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Title: </label><input type="text" ng-model="curGraph.title"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Description: </label><input type="text" ng-model="curGraph.description"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Connection: </label>
+						<select ng-model='curGraph.connection' ng-options="con._id as con.title for con in connections"></select>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Type: </label><input type="text" ng-model="curGraph.type"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Query: </label><input type="text" ng-model="curGraph.query"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Filter Predefined: </label><input type="text" ng-model="curGraph.filter_predefined"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Filter UI: </label><input type="text" ng-model="curGraph.filter_ui"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Post Process: </label><input type="text" ng-model="curGraph.post_process"/>
+					</div>
+			</div>
+			<div class="formRow">
+					<div class="input-prepend">
+						<label>Config: </label><input type="text" ng-model="curGraph.config"/>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-inverse" type = "submit" ng-click="saveGraph()">
+			Save Graph
+		</button>
+		<button class="btn btn-inverse" type = "submit" ng-show = "!newGraph" ng-click = "deleteGraph()">
+			Delete Graph
+		</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">
+			Close
+		</button>
+	</div>
+</div>

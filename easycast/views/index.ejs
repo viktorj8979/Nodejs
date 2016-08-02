@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="easycast">
+    <head>
+		<% include include/head.ejs %>
+    </head>
+    <body>
+        <div id="maincontainer" class="clearfix">
+			<% include include/header.ejs %>
+
+			<div id="contentwrapper">
+				<div class="main_content">
+					<div ng-view></div>
+				</div>
+			</div>
+			<% include include/footer.ejs %>
+		</div>
+		<% include include/foot.ejs %>
+    </body>
+</html>

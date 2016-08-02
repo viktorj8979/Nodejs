@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EasyCast</title>
+
+	<!-- Bootstrap framework -->
+		<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-responsive.min.css" />
+	<!-- theme color-->
+		<link rel="stylesheet" href="/css/blue.css" />
+	<!-- tooltip -->    
+		<link rel="stylesheet" href="/lib/qtip2/jquery.qtip.min.css" />
+	<!-- main styles -->
+		<link rel="stylesheet" href="/css/style.css" />
+	<!-- nice form elements -->
+		<link rel="stylesheet" href="/lib/uniform/Aristo/uniform.aristo.css" />
+	<!-- splashy icons -->
+		<link rel="stylesheet" href="/img/splashy/splashy.css" />
+	
+			<!-- Favicon -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+		<!--[if lte IE 8]>
+			<script src="/js/vendor/ie/html5.js"></script>
+			<script src="/js/vendor/ie/respond.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+    <div id="maincontainer" class="clearfix">
+			<header>
+				<div class="navbar navbar-fixed-top">
+					<div class="navbar-inner">
+						<div class="container-fluid">
+							<a class="brand" href="/">
+								<img src="img/logo.png" alt="SiteLogo" />
+							</a>
+							<ul class="nav nav-tabs">
+								<li>
+								  <a href="#"><img src="img/hd_icon1.png" alt="Features" />&nbsp;Features</a> 
+								</li>
+								<li>
+								  <a href="#"><img src="img/hd_icon2.png" alt="Blogs" />&nbsp;Blog</a> 
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div id="contentwrapper">
+				<div class="main_content">
+					<div class="container w-xxl w-auto-xs">
+					  <div class="m-t">
+					    <a href class="navbar-brand block">
+					      <img src="img/login/company_logo.png" alt="CompanyLogo" /><font><a href="/signup">Not you?</a></font>
+					    </a>
+					  </div>
+					  <div class="m-b-lg">
+					    <div class="wrapper text-center">
+					      <strong>Sign In to <font color="#e94727">nexinus</font>.easycast.io</strong>
+					    </div>
+
+					    <form name="form" action="/login" method="post">
+					      <!-- <div class="text-danger wrapper text-center" ng-show="authError">
+					          {{authError}}
+					      </div> -->
+					      <div class="list-group list-group-sm">
+					        <div class="list-group-item div-email">
+					          <input type="email" name="username" placeholder="Email" class="form-control no-border" required>
+					        </div>
+					        <div class="list-group-item div-pass">
+					           <input type="password" name="password" placeholder="Password" class="form-control no-border" required>
+					        </div>
+					      </div>
+					      <button type="submit" class="btn-lg-custom btn" style="background: #e94727;">SIGN IN</button>
+					      <div class="text-center m-a">
+					        <input type="checkbox" class="form-control no-border">&nbsp;<font>Keep me signed in</font>
+					      </div>
+					    </form>
+					    <div class="text-center m-t m-b"><a ui-sref="access.forgotpwd">I forgot my password</a></div>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		
+		<script src="/js/vendor/jquery.actual.min.js"></script>
+		<script src="/js/vendor/jquery.timeago.js"></script>
+		<script src="/lib/validation/jquery.validate.min.js"></script>
+		<script src="/lib/moment_js/moment.min.js"></script>
+		<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+		<!-- styled form elements -->
+		<script src="/lib/uniform/jquery.uniform.min.js"></script>
+		
+  </body>
+</html>
